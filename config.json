@@ -1,5 +1,4 @@
 {
-    "LOGIN_PAGE": "/login",
     "DB_INFO": {
         "host": "localhost",
         "db": "minutes",

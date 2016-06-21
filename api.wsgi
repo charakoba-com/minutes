@@ -16,17 +16,4 @@ post = app.post
 put = app.put
 delete = app.delete
 
-def session(func=None):
-    @wraps
-    def _(*a, **ka):
-        sessid = request.get_cookie('sessid')
-        if sessid:
-            query = 'SELECT * FORM session WHERE session_id=%s;'
-            with DB.connect(cursorclass=DC, **cfg['DB_INFO']) as c:
-                c.execute(query, (sessid,))
-                row = c.fetchone()
-            if row:
-                return func(*a, **ka)
-            else:
-                redirect(cfg['LOGIN_PAGE'])
-    return _
+
