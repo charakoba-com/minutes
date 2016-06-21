@@ -1,0 +1,8 @@
+{
+    "DB_INFO": {
+        "host": "localhost",
+        "db": "minutes",
+        "user": "",
+        "passwd": ""
+    }
+}
