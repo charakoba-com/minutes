@@ -17,6 +17,10 @@ put = app.put
 delete = app.delete
 
 
+@get('/report/<year:int>/<month:int>/<week:int>')
+def api_get_report(year, month, week):
+    pass
+
 
 @post('/report/<year:int>/<month:int>/<week:int>')
 def api_post_report(year, month, week):
