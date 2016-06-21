@@ -1,0 +1,17 @@
+{
+  "name": "minutes",
+  "homepage": "https://github.com/nasa9084/minutes",
+  "authors": [
+    "nasa9084 <nasa9084@live.jp>"
+  ],
+  "description": "Simple report system",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
