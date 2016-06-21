@@ -1,3 +1,0 @@
-<App>
-  <NavBar></NavBar>
-</App>

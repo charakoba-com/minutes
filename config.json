@@ -2,7 +2,7 @@
     "DB_INFO": {
         "host": "localhost",
         "db": "minutes",
-        "user": "",
+        "user": "root",
         "passwd": ""
     }
 }
