@@ -39,16 +39,18 @@
    this.week = '0' + Math.floor((today.getDate() - today.getDay() + 12) / 7).toString();
    this.update();
 
-   var request = window.superagent;
    var self = this
    submitreport(e) {
+     var request = window.superagent;
+     var username = e.target[0].value;
+     var body = e.target[1].value;
      request
-     .post("http://localhost:8080/api/report/{ year }/{ month }/{ week }")
-     .send({username: e.username, body: e.body})
+     .post("http://localhost:8080/api/report/"+self.year+"/"+self.month+"/"+self.week)
+     .type('form')
+     .send({username: username, body: body})
      .end(function(err, res){
-       if (res.status){
-         location.href('/');
-       }else{
+       if (res.body['status']){
+         location.href = 'index.html';
        }
      });
    }

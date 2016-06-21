@@ -60,6 +60,7 @@ def api_get_report_list():
                     'key': key,
                 }
             )
+            done.append(key)
     return {'list': list_}
 
 
