@@ -4,5 +4,6 @@
         "db": "minutes",
         "user": "root",
         "passwd": ""
-    }
+    },
+    "slack_url": ""
 }
