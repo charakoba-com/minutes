@@ -111,10 +111,10 @@ def api_post_report(parameter, year, month, week):
         '''.format(username, body)
     }
     payload = {
-        'payload': payload
+        'payload': json.dumps(payload)
     }
     requests.post(
-        'https://hooks.slack.com/services/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',
+        cfg['slack_url'],
         data=payload
     )
     return {"status": True}
