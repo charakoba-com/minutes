@@ -107,7 +107,7 @@ def api_post_report(parameter, year, month, week):
     payload = {
         'username': 'Minutes',
         'text': '''[Report] posted by {0}
-        {1}
+{1}
         '''.format(username, body)
     }
     payload = {
