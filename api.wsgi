@@ -7,6 +7,7 @@ import xml.sax.saxutils as html
 import json
 import MySQLdb as DB
 from MySQLdb.cursors import DictCursor as DC
+import requests
 
 with open('config.json', 'r') as f:
     cfg = json.load(f)
@@ -103,4 +104,14 @@ def api_post_report(parameter, year, month, week):
             query,
             (username, year, month, week, body)
         )
+    payload = {
+        'username': 'Minutes',
+        'text': '''[Report] posted by {0}
+        {1}
+        '''.format(username, body)
+    }
+    requests.post(
+        'https://hooks.slack.com/services/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',
+        data=payload
+    )
     return {"status": True}
