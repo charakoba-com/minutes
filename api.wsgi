@@ -75,11 +75,17 @@ def api_get_report(year, month, week):
         )
         rows = cursor.fetchall()
     reports = []
+    report_dict = {}
     for row in rows:
+        if row['username'] in report_dict:
+            report_dict[row['username']] += html.escape(row['body'])
+        else:
+            report_dict[row['username']] = html.escape(row['body'])
+    for username, body in report_dict.iteritems():
         reports.append(
             {
-            "username": row['username'],
-            "body": html.escape(row['body'])
+                'username': username,
+                'body': body
             }
         )
     return {'reports': reports}
