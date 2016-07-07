@@ -6,7 +6,7 @@
           <span class="card-title">Report::{hash}</span>
         </div>
       </div>
-      <div clas="card" each={ item in list }>
+      <div class="card" each={ item in list }>
         <div class="card-content">
           <span class="card-title">{ item.username }</span>
           <p class="flow-text" each={ reportbody in item.body }>
