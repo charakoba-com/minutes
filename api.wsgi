@@ -19,7 +19,6 @@ put = app.put
 delete = app.delete
 
 
-
 def params(require=[], option=[]):
     def wrap(func):
         @wraps(func)
