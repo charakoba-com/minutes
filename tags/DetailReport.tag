@@ -4,12 +4,14 @@
       <div class="card">
         <div class="card-content">
           <span class="card-title">Report::{hash}</span>
-          <virtual each={ item in list }>
-            <h6>{ item.username }</h6>
-            <p class="flow-text">
-              { item.body }
-            </p>
-          </virtual>
+        </div>
+      </div>
+      <div clas="card" each={ item in list }>
+        <div class="card-content">
+          <span class="card-title">{ item.username }</span>
+          <p class="flow-text" each={ reportbody in item.body }>
+            { reportbody }
+          </p>
         </div>
       </div>
     </div>
