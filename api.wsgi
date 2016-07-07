@@ -61,7 +61,7 @@ def api_get_report_list():
                 }
             )
             done.append(key)
-    return {'list': list_}
+    return {'list': list(reversed(list_))}
 
 
 @get('/api/report/<year:int>/<month:int>/<week:int>')
