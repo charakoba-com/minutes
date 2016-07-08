@@ -79,7 +79,7 @@ def api_get_report(year, month, week):
         if row['username'] in report_dict:
             report_dict[row['username']].append(row['body'])
         else:
-            report_dict[row['username']] = row['body']
+            report_dict[row['username']] = [row['body']]
     for username, body in report_dict.iteritems():
         reports.append(
             {
