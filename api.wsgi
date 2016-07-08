@@ -3,7 +3,6 @@
 
 from bottle import Bottle, redirect, request, response
 from functools import wraps
-import xml.sax.saxutils as html
 import json
 import MySQLdb as DB
 from MySQLdb.cursors import DictCursor as DC
