@@ -3,7 +3,6 @@
 
 from bottle import Bottle, redirect, request, response
 from functools import wraps
-import xml.sax.saxutils as html
 import json
 import MySQLdb as DB
 from MySQLdb.cursors import DictCursor as DC
@@ -78,9 +77,9 @@ def api_get_report(year, month, week):
     report_dict = {}
     for row in rows:
         if row['username'] in report_dict:
-            report_dict[row['username']].append(html.escape(row['body']))
+            report_dict[row['username']].append(row['body'])
         else:
-            report_dict[row['username']] = [html.escape(row['body'])]
+            report_dict[row['username']] = row['body']
     for username, body in report_dict.iteritems():
         reports.append(
             {
