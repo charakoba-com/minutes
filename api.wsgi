@@ -104,6 +104,7 @@ def api_post_report(parameter, year, month, week):
         )
     payload = {
         'username': 'Minutes',
+        'icon_emoji': ':spiral_note_pad:',
         'text': '''[Report] posted by {0}
 {1}
         '''.format(username, body)
