@@ -18,7 +18,7 @@
             </div>
             <div class="row">
               <div class="input-field col s2 offset-s10">
-                <button class="btn">Submit</button>
+                <button class="btn" disabled={ sending  }>Submit</button>
               </div>
             </div>
           </form>
@@ -44,6 +44,7 @@
      var request = window.superagent;
      var username = e.target[0].value;
      var body = e.target[1].value;
+     var sending = true;
      request
      .post("http://localhost:8080/api/report/"+self.year+"/"+self.month+"/"+self.week)
      .type('form')
@@ -52,6 +53,7 @@
        if (res.body['status']){
          location.href = 'index.html';
        }
+       sending = false;
      });
    }
   </script>
