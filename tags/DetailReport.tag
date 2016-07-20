@@ -22,7 +22,7 @@
    var request = window.superagent;
    var self = this
    request
-   .get('http://localhost:8080/api/report/'+this.hash)
+   .get(config.apibaseuri+this.hash)
    .end(function(err, res){
      self.list = res.body.reports
      self.update();

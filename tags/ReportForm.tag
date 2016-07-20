@@ -46,7 +46,7 @@
      var body = e.target[1].value;
      sending = true;
      request
-     .post("http://localhost:8080/api/report/"+self.year+"/"+self.month+"/"+self.week)
+     .post(config.apibaseuri+self.year+"/"+self.month+"/"+self.week)
      .type('form')
      .send({username: username, body: body})
      .end(function(err, res){
