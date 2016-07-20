@@ -1,0 +1,3 @@
+config = {
+    apibaseuri: 'http://localhost:8080/api/report/'
+}
